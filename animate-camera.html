@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <a-assets>
+                <img id="texture" src="img/texture.jpg">
+		<img id="dest" src="img/texture.jpg">
+            </a-assets>   
+<a-light type="spot" color="#333" position="-20 0 0"></a-light>
+<a-light type="point" color="#AAA" position="0 5 0"></a-light>
+<a-entity light="type: ambient; color: #BBB"></a-entity>
+<a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+			
+		<a-box id="resorts" width="1" height="1" depth="1"
+                   position="7 1 0"
+                   rotation="0 0 0"
+                   scale="1 2.5 1"
+		   src="#texture">
+<a-animation attribute="scale" begin="spiner" to="0.3 0.3 0.3" easing="ease-in-out-elastic"></a-animation>
+<a-animation attribute="scale" begin="shrink" to="0 0 0" easing="ease-in-out-elastic"></a-animation>
+            </a-box>
+          
+<a-box color="#6173F4" opacity="0.8" depth="2" position="0 0 -15"></a-box>
+      <a-sky color="#EDECEC"></a-sky>
+
+      <a-entity id="mycamera" camera position="0 1.6 5" look-controls wasd-controls="fly: true">
+        <a-animation attribute="position" dur="2000" easing="linear" to="0 1.6 -10"></a-animation>
+       </a-entity>
+
+        </a-scene>
+      
+    </body>
+</html>
